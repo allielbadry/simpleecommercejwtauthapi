@@ -1,7 +1,12 @@
 const categoryController = require("../controllers/categoryController");
 const router = require("express").Router();
+const passport = require("passport");
 
-router.get("/category", categoryController.getCategory);
+router.get(
+  "/category",
+  passport.authenticate("admin", { session: false }),
+  categoryController.getCategory
+);
 router.post("/newcategory", categoryController.createCategory);
 router.put("/:categoryId", categoryController.updateCategory);
 router.delete("/:categoryId", categoryController.deleteCategory);

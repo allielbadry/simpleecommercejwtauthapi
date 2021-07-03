@@ -28,11 +28,12 @@ module.exports = {
     const expiresIn = "1d";
     const payload = {
       sub: _id,
+      isAdmin: false,
       iat: Date.now(),
     };
     const signedToken = jwt.sign(payload, PRIV_KEY, {
       expiresIn: expiresIn,
-      algorthim: "RS256",
+      algorithm: "RS256",
     });
     return {
       token: "Bearer " + signedToken,
