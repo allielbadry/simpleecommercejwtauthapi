@@ -6,6 +6,8 @@ mongoose.connect(process.env.DB_URI, {
   useUnifiedTopology: true,
 });
 
+mongoose.Promise = global.Promise;
+
 mongoose.connection.once("connect", () => {
   console.log("DB CONNECTED");
 });

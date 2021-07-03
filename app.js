@@ -26,7 +26,7 @@ app.use(
 app.use(cors());
 
 // laod all the routes
-require("./routes");
+app.use(require("./routes"));
 
 app.listen(process.env.PORT, () => {
   console.log(`SERVER IS RUNNING ON PORT ${process.env.PORT}`);

@@ -39,9 +39,13 @@ const productSchema = new Schema({
     type: Boolean,
     default: false,
   },
-  catagory: {
+  created: {
+    type: Date,
+    default: Date.now,
+  },
+  category: {
     type: Schema.Types.ObjectID,
-    ref: "Catagory",
+    ref: "Category",
   },
 });
 
