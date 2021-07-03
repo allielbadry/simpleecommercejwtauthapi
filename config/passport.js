@@ -11,8 +11,9 @@ options = {
   jwtFromRequest: jwtExtract.fromAuthHeaderAsBearerToken(),
   secretOrKey: PUB_KEY,
   algorithms: ["RS256"],
+  passReqToCallback: true,
 };
-const strategy = new jwtStrategy(options, (payload, done) => {
+const strategy = new jwtStrategy(options, (req, payload, done) => {
   User.findById(payload.sub)
     .then((user) => {
       if (user) {

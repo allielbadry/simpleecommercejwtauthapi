@@ -4,7 +4,7 @@ const passport = require("passport");
 
 router.get(
   "/category",
-  passport.authenticate("admin", { session: false }),
+  passport.authenticate("user", { session: false }),
   categoryController.getCategory
 );
 router.post("/newcategory", categoryController.createCategory);

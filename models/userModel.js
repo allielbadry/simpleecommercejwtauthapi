@@ -11,6 +11,10 @@ const userSchema = new Schema({
     required: true,
     unique: true,
   },
+  address: {
+    type: String,
+    required: true,
+  },
   hash: String,
   salt: String,
 });
