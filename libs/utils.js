@@ -25,10 +25,11 @@ module.exports = {
   },
   issueJWT: function (user) {
     const _id = user._id;
+    const admin = user.isAdmin;
     const expiresIn = "1d";
     const payload = {
       sub: _id,
-      isAdmin: false,
+      isAdmin: admin,
       iat: Date.now(),
     };
     const signedToken = jwt.sign(payload, PRIV_KEY, {

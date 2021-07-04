@@ -5,10 +5,10 @@ const orderRoute = require("./orderRoute");
 const orderItemRoute = require("./orderItemsRoute");
 const router = require("express").Router();
 
+router.use("/", orderRoute);
 router.use("/", categoryRoute);
 router.use("/", productRoute);
 router.use("/", userRoute);
-// router.use("/", orderRoute); to do need some edit
 router.use("/", orderItemRoute);
 
 module.exports = router;

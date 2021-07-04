@@ -9,6 +9,6 @@ router.post(
   orderItemController.createOrder
 );
 
-router.use("productId", productById);
+router.param("productId", productById);
 
 module.exports = router;

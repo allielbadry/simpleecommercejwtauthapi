@@ -6,6 +6,10 @@ const orderItemsSchema = new Schema({
     type: Number,
     required: true,
   },
+  isPaid: {
+    type: Boolean,
+    default: false,
+  },
   product: {
     type: Schema.Types.ObjectID,
     ref: "Product",

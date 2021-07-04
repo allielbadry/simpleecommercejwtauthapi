@@ -25,7 +25,7 @@ const strategy = new jwtStrategy(options, (req, payload, done) => {
       return done(err, null);
     });
 });
-const strategyAdmin = new jwtStrategy(options, (payload, done) => {
+const strategyAdmin = new jwtStrategy(options, (req, payload, done) => {
   User.findById(payload.sub)
     .then((user) => {
       if (user && user.isAdmin) {
